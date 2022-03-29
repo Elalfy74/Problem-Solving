@@ -44,3 +44,18 @@ var twoSum = function (numbers, target) {
     }
   }
 };
+
+//Better Solution Simliar to Binary Search
+var twoSum = function (numbers, target) {
+  let left = 0;
+  let right = numbers.length - 1;
+  let sum;
+  let result = [];
+  while (left < right) {
+    sum = numbers[left] + numbers[right];
+    if (sum == target) result = [left + 1, right + 1];
+    if (sum < target) left++;
+    else right--;
+  }
+  return result;
+};
